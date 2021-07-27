@@ -15,7 +15,7 @@ const Searcher = () => {
     if(search!==""){
       // action get 
     }
-    else alert("Digite una receta")
+    else alert("Digite un gist")
   };
 
   return (
