@@ -20,9 +20,9 @@ export const getGist=()=>{
     }
 }
 
-export const getGistId=(id)=>{
+export const getGistId=(name)=>{
     return function (dispach){
-        return axios.get(GISTS_URL+id).then((res)=>{
+        return axios.get(GISTS_URL+name).then((res)=>{
             dispach({
                 type: GET_GISTS_ID,
                 payload: res,

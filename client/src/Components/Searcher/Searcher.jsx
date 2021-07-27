@@ -14,6 +14,7 @@ const Searcher = () => {
     e.preventDefault();
     if(search!==""){
       // action get 
+      setSearch("");
     }
     else alert("Digite un gist")
   };
