@@ -12,17 +12,15 @@ const Searcher = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if(search!==""){
-      // action get 
+    if (search !== "") {
       setSearch("");
-    }
-    else alert("Digite un gist")
+    } else alert("Digite un gist");
   };
 
   return (
     <div>
-      <h2>Searcher</h2>
-      <form onSubmit={handleSubmit}> 
+      <h1>Searcher</h1>
+      <form onSubmit={handleSubmit}>
         <input
           type="text"
           name="search"
@@ -31,9 +29,9 @@ const Searcher = () => {
           value={search}
           onChange={handleChange}
         />
-        <input type="submit" value="Search" /> 
+        <input type="submit" value="Search" />
       </form>
-      <Gists stateSearch={search}/>
+      <Gists stateSearch={search} />
     </div>
   );
 };

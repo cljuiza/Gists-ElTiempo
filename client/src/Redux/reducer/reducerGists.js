@@ -1,9 +1,13 @@
 // ACTIONS
-import { GET_GISTS, GET_GISTS_ID } from "../actions/actionsGists.js";
+import {
+  GET_GISTS,
+  GET_GISTS_ID,
+  REMOVE_GISTS_ID,
+} from "../actions/actionsGists.js";
 
 const initialStateUsers = {
-    allGists: [],
-    gistsById: {},
+  allGists: [],
+  gistsById: {},
 };
 
 const usersReducer = (state = initialStateUsers, action) => {
@@ -11,12 +15,17 @@ const usersReducer = (state = initialStateUsers, action) => {
     case GET_GISTS:
       return {
         ...state,
-        allGists:action.payload
+        allGists: action.payload,
       };
     case GET_GISTS_ID:
       return {
         ...state,
-        gistsById:action.payload
+        gistsById: action.payload,
+      };
+    case REMOVE_GISTS_ID:
+      return {
+        ...state,
+        gistsById: {},
       };
 
     default:

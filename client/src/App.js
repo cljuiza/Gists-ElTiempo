@@ -7,12 +7,24 @@ import Searcher from "./Components/Searcher/Searcher";
 
 function App() {
   return (
-    <div className="App">
-      <h1>El Tiempo</h1>
+    <div className="App"
+    style={
+      {
+        width:"100vw",
+        height: "100vh",
+        backgroundColor:"#22272e",
+        backgroundPosition : "center",
+        backgroundSize:"cover",
+        backgroundRepeat:"no-repeat",
+        display: 'flex',
+       
+        justifyContent: 'center'
+      }
+    }>
       <BrowserRouter>
-        <NavBar />
         <Route exact path="/" component={Searcher}></Route>
-        <Route path="/gists/:id" component={GistsDetail}></Route>
+        <Route exat path="/gists" component={NavBar}></Route>
+        <Route path="/gists/:name" component={GistsDetail}></Route>
       </BrowserRouter>
     </div>
   );
