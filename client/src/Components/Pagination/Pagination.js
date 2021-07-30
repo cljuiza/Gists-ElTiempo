@@ -19,7 +19,7 @@ const StyleLi = styled.li`
 `;
 const StyleButton = styled.button`
   background-color: #adbac7;
-  color: black;
+  color: #444c56;
   font-weight: bold;
   height: 30px;
   width: 30px;
