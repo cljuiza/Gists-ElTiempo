@@ -1,7 +1,23 @@
 import React, { useState } from "react";
-
+import styled from "styled-components";
 //components
 import Gists from "../Gists/Gists";
+
+const Container = styled.div`
+  margin-top: 32px;
+  width: 100%;
+`;
+const StyleInput = styled.input`
+    background:#fff;
+    width: 220px;
+    height: 35px;
+    border: none;
+    outline: none;
+    padding: 0 25px;
+    border-radius: 20px;
+    font-family: 'Varela Round', sans-serif;
+    font-size: 15px;
+`;
 
 const Searcher = () => {
   const [search, setSearch] = useState("");
@@ -18,10 +34,9 @@ const Searcher = () => {
   };
 
   return (
-    <div>
-      <h1>Searcher</h1>
+    <Container>
       <form onSubmit={handleSubmit}>
-        <input
+        <StyleInput
           type="text"
           name="search"
           id="search"
@@ -29,10 +44,9 @@ const Searcher = () => {
           value={search}
           onChange={handleChange}
         />
-        <input type="submit" value="Search" />
       </form>
       <Gists stateSearch={search} />
-    </div>
+    </Container>
   );
 };
 

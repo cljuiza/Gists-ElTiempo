@@ -2,18 +2,32 @@ import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import { getGist, removeGistId } from "../../Redux/actions/actionsGists";
+import styled from "styled-components";
 
 //Components
 import Gist from "../Gist/Gist";
 import Pagination from "../Pagination/Pagination";
 
+const Container = styled.div`
+  margin-top: 20px;
+  width: 100%;
+  min-height: 71vh;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+`;
+const Paginado = styled.div`
+  width: 100%;
+`;
+
 const Gists = ({ stateSearch }) => {
   const gists = useSelector((state) => state.allGists);
   const dispatch = useDispatch();
-  const [postsPerPage] = useState(20);
+  const [postsPerPage] = useState(14);
   const [posts, setPosts] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
-  console.log(stateSearch)
+  console.log(stateSearch);
 
   useEffect(() => {
     if (gists.length === 0) {
@@ -41,43 +55,53 @@ const Gists = ({ stateSearch }) => {
   const paginate = (pageNumber) => setCurrentPage(pageNumber);
 
   return (
-    <div>
-      <h1>componente Gists</h1>
-      {stateSearch !== ""
-        ? currentPosts
-            .filter((gist) =>
-              gist.owner.login.toLowerCase().includes(stateSearch.toLowerCase())
-            )
-            .map((g, index) => (
-              <Link to={`/gists/${g.owner.login}`} key={index}>
-                <Gist
-                  id={g.owner.id}
-                  name={g.owner.login}
-                  image={g.owner.avatar_url}
-                  description={g.description}
-                />
-              </Link>
-            ))
-        : gists &&
-          currentPosts.map((g, index) => (
-            <Link to={`/gists/${g.owner.login}`} key={index}>
-              <Gist
-                id={g.owner.id}
-                name={g.owner.login}
-                image={g.owner.avatar_url}
-                description={g.description}
-              />
-            </Link>
-          ))}
-      <div>
-        <br />
-        <Pagination
-          postsPerPage={postsPerPage}
-          totalPosts={posts.length}
-          paginate={paginate}
-        />
-      </div>
-    </div>
+    <>
+      {Object.keys(gists).length === 0 ? (
+        <div>
+          <h1>...Loading</h1>
+        </div>
+      ) : (
+        <>
+          <Container>
+            {stateSearch !== ""
+              ? currentPosts
+                  .filter((gist) =>
+                    gist.owner.login
+                      .toLowerCase()
+                      .includes(stateSearch.toLowerCase())
+                  )
+                  .map((g, index) => (
+                    <Link to={`/gists/${g.owner.login}`} key={index}>
+                      <Gist
+                        id={g.owner.id}
+                        name={g.owner.login}
+                        image={g.owner.avatar_url}
+                        description={g.description}
+                      />
+                    </Link>
+                  ))
+              : gists &&
+                currentPosts.map((g, index) => (
+                  <Link to={`/gists/${g.owner.login}`} key={index}>
+                    <Gist
+                      id={g.owner.id}
+                      name={g.owner.login}
+                      image={g.owner.avatar_url}
+                      description={g.description}
+                    />
+                  </Link>
+                ))}
+          </Container>
+          <Paginado>
+            <Pagination
+              postsPerPage={postsPerPage}
+              totalPosts={posts.length}
+              paginate={paginate}
+            />
+          </Paginado>
+        </>
+      )}
+    </>
   );
 };
 

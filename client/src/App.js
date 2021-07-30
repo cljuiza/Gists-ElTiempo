@@ -10,20 +10,19 @@ function App() {
     <div className="App"
     style={
       {
-        width:"100vw",
-        height: "100vh",
+        minheight: "100vh",
         backgroundColor:"#22272e",
         backgroundPosition : "center",
         backgroundSize:"cover",
         backgroundRepeat:"no-repeat",
         display: 'flex',
-       
-        justifyContent: 'center'
+        flexDirection:"column",
       }
     }>
       <BrowserRouter>
+        <Route  path="/" component={NavBar}></Route>
         <Route exact path="/" component={Searcher}></Route>
-        <Route exat path="/gists" component={NavBar}></Route>
+        {/* <Route exat path="/gists" component={NavBar}></Route> */}
         <Route path="/gists/:name" component={GistsDetail}></Route>
       </BrowserRouter>
     </div>
