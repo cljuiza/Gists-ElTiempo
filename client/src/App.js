@@ -10,7 +10,7 @@ function App() {
     <div className="App"
     style={
       {
-        minheight: "100vh",
+        minHeight: "100vh",
         backgroundColor:"#22272e",
         backgroundPosition : "center",
         backgroundSize:"cover",
@@ -20,7 +20,7 @@ function App() {
       }
     }>
       <BrowserRouter>
-        <Route  path="/" component={NavBar}></Route>
+        <Route  exact path="/" component={NavBar}></Route>
         <Route exact path="/" component={Searcher}></Route>
         {/* <Route exat path="/gists" component={NavBar}></Route> */}
         <Route path="/gists/:name" component={GistsDetail}></Route>

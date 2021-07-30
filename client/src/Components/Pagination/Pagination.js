@@ -9,23 +9,30 @@ const StyleContainer = styled.nav`
 const StyleUr = styled.ul`
   padding: 0px 10px;
   text-decoration: none;
-  display:flex;
-  text-decoration: none
+  display: flex;
+  text-decoration: none;
 `;
 const StyleLi = styled.li`
   padding: 0px 10px;
   text-decoration: none;
-  list-style:none
+  list-style: none;
 `;
 const StyleButton = styled.button`
   background-color: #adbac7;
   color: black;
+  font-weight: bold;
   height: 30px;
   width: 30px;
   border-radius: 5px;
   font-family: "Varela Round", sans-serif;
   cursor: pointer;
-
+  outline: none;
+  border: none;
+  transition: all 0.2s ease-in-out;
+  &:hover{
+  background-color: #adbac780;
+  color: white;
+  }
 `;
 
 const Pagination = ({ postsPerPage, totalPosts, paginate }) => {
@@ -38,11 +45,7 @@ const Pagination = ({ postsPerPage, totalPosts, paginate }) => {
       <StyleUr>
         {pageNumbers.map((number) => (
           <StyleLi key={number}>
-            <StyleButton
-              onClick={() => paginate(number)}
-            >
-              {number}
-            </StyleButton>
+            <StyleButton onClick={() => paginate(number)}>{number}</StyleButton>
           </StyleLi>
         ))}
       </StyleUr>

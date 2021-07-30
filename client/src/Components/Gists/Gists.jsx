@@ -20,6 +20,9 @@ const Container = styled.div`
 const Paginado = styled.div`
   width: 100%;
 `;
+const StyledH1 = styled.h1`
+  color: #adbac7;
+`;
 
 const Gists = ({ stateSearch }) => {
   const gists = useSelector((state) => state.allGists);
@@ -27,7 +30,6 @@ const Gists = ({ stateSearch }) => {
   const [postsPerPage] = useState(14);
   const [posts, setPosts] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
-  console.log(stateSearch);
 
   useEffect(() => {
     if (gists.length === 0) {
@@ -58,7 +60,7 @@ const Gists = ({ stateSearch }) => {
     <>
       {Object.keys(gists).length === 0 ? (
         <div>
-          <h1>...Loading</h1>
+          <StyledH1>...Loading</StyledH1>
         </div>
       ) : (
         <>

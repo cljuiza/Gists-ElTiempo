@@ -9,7 +9,7 @@ const Container = styled.div`
 `;
 const StyleInput = styled.input`
     background:#fff;
-    width: 220px;
+    width: 250px;
     height: 35px;
     border: none;
     outline: none;
