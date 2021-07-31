@@ -16,6 +16,7 @@ const Container = styled.div`
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: center;
+  text-decoration: none;
 `;
 const Paginado = styled.div`
   width: 100%;
@@ -73,7 +74,11 @@ const Gists = ({ stateSearch }) => {
                       .includes(stateSearch.toLowerCase())
                   )
                   .map((g, index) => (
-                    <Link to={`/gists/${g.owner.login}`} key={index}>
+                    <Link
+                      style={{ textDecoration: "none" }}
+                      to={`/gists/${g.owner.login}`}
+                      key={index}
+                    >
                       <Gist
                         id={g.owner.id}
                         name={g.owner.login}
@@ -84,7 +89,11 @@ const Gists = ({ stateSearch }) => {
                   ))
               : gists &&
                 currentPosts.map((g, index) => (
-                  <Link to={`/gists/${g.owner.login}`} key={index}>
+                  <Link
+                    style={{ textDecoration: "none" }}
+                    to={`/gists/${g.owner.login}`}
+                    key={index}
+                  >
                     <Gist
                       id={g.owner.id}
                       name={g.owner.login}

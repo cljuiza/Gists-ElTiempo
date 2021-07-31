@@ -18,7 +18,7 @@ const StyleLi = styled.li`
   list-style: none;
 `;
 const StyleButton = styled.button`
-  background-color: #adbac7;
+  background-color: #DEE1E4;
   color: #444c56;
   font-weight: bold;
   height: 30px;

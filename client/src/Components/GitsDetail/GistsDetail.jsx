@@ -95,7 +95,7 @@ const GistsDetail = () => {
               <StyledH2>
                 id : {gist.id}
               </StyledH2>
-              <StyledH3>Company : {gist.company}</StyledH3>
+              <StyledH3>Company : {gist.company?gist.company:"none"}</StyledH3>
               <StyledH3>
                 Created in :{" "}
                 {`${gist.created_at
@@ -118,7 +118,7 @@ const GistsDetail = () => {
                   ))}
                 </ul>
               ) : (
-                <StyledH3>does not have repositories</StyledH3>
+                <StyledH3>doesn't have repositories</StyledH3>
               )}
             </div>
           </Container>

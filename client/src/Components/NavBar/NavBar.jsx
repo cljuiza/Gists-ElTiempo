@@ -5,7 +5,6 @@ import back from "../../Images/atras.png";
 import { useParams } from "react-router-dom";
 import { Link } from "react-router-dom";
 
-
 const StyledNavBar = styled.div`
   width: 100%;
   background: #2d333b;
