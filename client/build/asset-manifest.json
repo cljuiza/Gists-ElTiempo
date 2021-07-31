@@ -1,0 +1,24 @@
+{
+  "files": {
+    "main.css": "/static/css/main.c8f5c45d.chunk.css",
+    "main.js": "/static/js/main.4e8223db.chunk.js",
+    "main.js.map": "/static/js/main.4e8223db.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.6ac5b4fe.js",
+    "runtime-main.js.map": "/static/js/runtime-main.6ac5b4fe.js.map",
+    "static/js/2.f1cbdf51.chunk.js": "/static/js/2.f1cbdf51.chunk.js",
+    "static/js/2.f1cbdf51.chunk.js.map": "/static/js/2.f1cbdf51.chunk.js.map",
+    "static/js/3.7279992d.chunk.js": "/static/js/3.7279992d.chunk.js",
+    "static/js/3.7279992d.chunk.js.map": "/static/js/3.7279992d.chunk.js.map",
+    "index.html": "/index.html",
+    "static/css/main.c8f5c45d.chunk.css.map": "/static/css/main.c8f5c45d.chunk.css.map",
+    "static/js/2.f1cbdf51.chunk.js.LICENSE.txt": "/static/js/2.f1cbdf51.chunk.js.LICENSE.txt",
+    "static/media/atras.a9df7f9e.png": "/static/media/atras.a9df7f9e.png",
+    "static/media/icone-github-grise.aabf6c82.png": "/static/media/icone-github-grise.aabf6c82.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.6ac5b4fe.js",
+    "static/js/2.f1cbdf51.chunk.js",
+    "static/css/main.c8f5c45d.chunk.css",
+    "static/js/main.4e8223db.chunk.js"
+  ]
+}
